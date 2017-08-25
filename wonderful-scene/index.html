@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wonderful-scene</title>
+    <meta name="description" content="wonderful-scene">
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-terrain-model-component@0.2.3/dist/aframe-terrain-model-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="car-obj" src="data/car/tinker.obj"></a-asset-item>
+        <a-asset-item id="car-mtl" src="data/car/obj.mtl"></a-asset-item>
+      </a-assets>
+      <a-entity obj-model="obj: #car-obj; mtl: #car-mtl" rotation="270 -72 0" scale="0.02 0.02 0.02" color="#ddd" position="0 0.51 7.32"></a-entity>
+
+      <a-entity terrain-model='DEM: url(data/jotunheimen512.bin); texture: url(data/jotunheimen-texture.jpg); planeWidth: 200; planeHeight: 200; segmentsWidth: 200; segmentsHeight: 200; zPosition: 1;'></a-entity>
+    </a-scene>
+  </body>
+</html>
