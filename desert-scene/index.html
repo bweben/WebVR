@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>desert-scene by https://sketchfab.com/jemepousse</title>
+    <meta name="description" content="desert-scene">
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="desert-obj" src="OASIS_02.obj"></a-asset-item>
+      </a-assets>
+      <a-entity light="type: directional; color: #FFF; intensity: 1.0" position="-29.21 10.98 -12.45" rotation="30 0 0"></a-entity>
+
+      <a-entity obj-model="obj: #desert-obj;" material="color: #ef6c00"></a-entity>
+      <a-entity camera="userHeight: 1" look-controls position="-17.25 -4 -21.76" rotation="-22.23 192.95 0">
+        <a-animation attribute="position"
+                     dur="30000"
+                     direction="alternate"
+                     easing="ease"
+                     to="6.5 4.23 -7.19"
+                     repeat="2"></a-animation>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
