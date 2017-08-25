@@ -10,18 +10,24 @@
     <a-scene>
       <a-assets>
         <a-asset-item id="desert-obj" src="OASIS_02.obj"></a-asset-item>
+        <img id="skyTexture" src="desert_sunset.jpg">
       </a-assets>
-      <a-entity light="type: directional; color: #FFF; intensity: 1.0" position="-29.21 10.98 -12.45" rotation="30 0 0"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: .5" position="-29.21 10.98 -12.45" rotation="30 0 0"></a-entity>
+      <a-entity light="type: hemisphere; color: #f2dd0c; groundColor: #f6990a; intensity: .8"></a-entity>
 
-      <a-entity obj-model="obj: #desert-obj;" material="color: #ef6c00"></a-entity>
-      <a-entity camera="userHeight: 1" look-controls position="-17.25 -4 -21.76" rotation="-22.23 192.95 0">
+      <a-entity obj-model="obj: #desert-obj;" material="color: #e6a644" position="0 9.33 0"></a-entity>
+      <a-entity camera="userHeight: 1" look-controls position="-17.25 5.33 -21.76" rotation="-22.23 192.95 0">
         <a-animation attribute="position"
                      dur="30000"
                      direction="alternate"
                      easing="ease"
-                     to="6.5 4.23 -7.19"
+                     to="6.5 13.53 -7.19"
                      repeat="2"></a-animation>
       </a-entity>
+
+      <a-circle color="#ddd" rotation="-90 0 0" position="0 -0.14 0" radius="200"></a-circle>
+
+      <a-sky height="800" radius="190" src="#skyTexture" theta-length="115" width="2351"></a-sky>
     </a-scene>
   </body>
 </html>
