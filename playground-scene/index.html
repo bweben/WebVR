@@ -13,14 +13,21 @@
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
         <img id="leaveTexture"
              src="https://img02.deviantart.net/eed6/i/2006/134/4/f/texture_leaves_by_kuschelirmel_stock.jpg">
+        <a-asset-item id="car-obj" src="assets/car/tinker.obj"></a-asset-item>
+        <a-asset-item id="car-mtl" src="assets/car/obj.mtl"></a-asset-item>
+        <a-asset-item id="city-obj" src="assets/city/tinker.obj"></a-asset-item>
+        <a-asset-item id="city-mtl" src="assets/city/obj.mtl"></a-asset-item>
     </a-assets>
+
+    <a-entity obj-model="obj: #car-obj; mtl: #car-mtl" rotation="270 -72 0" scale="0.02 0.02 0.02" color="#ddd" position="0 0 -17.98"></a-entity>
+    <a-entity obj-model="obj: #city-obj; mtl: #city-mtl" rotation="270 0 0" color="#a3f" position="0 -6.26 0"></a-entity>
 
     <a-entity camera="userHeight: 1" look-controls>
         <a-animation attribute="position"
                      dur="10000"
                      direction="alternate"
                      easing="ease"
-                     to="0 .8 -6"
+                     to="0 .8 -60"
                      repeat="2"></a-animation>
         <a-animation attribute="position"
                      dur="10000"
@@ -28,14 +35,14 @@
                      delay="20000"
                      direction="alternate"
                      repeat="2"
-                     to="0 .8 10"></a-animation>
+                     to="0 .8 100"></a-animation>
         <a-animation attribute="position"
                      dur="10000"
                      delay="40000"
                      easing="ease"
                      direction="alternate"
                      repeat="2"
-                     to="0 3 10"></a-animation>
+                     to="0 30 10"></a-animation>
     </a-entity>
     <a-entity light="color: #fef7da; intensity: 2.5; angle: 90; type: ambient" position="1 1 0"></a-entity>
 
@@ -47,10 +54,10 @@
     </a-torus-knot>
 
     <!-- Background sky. -->
-    <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+    <a-sky height="2048" radius="300" src="#skyTexture" theta-length="90" width="2048"></a-sky>
 
     <!-- Ground. -->
-    <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
+    <a-circle src="#groundTexture" rotation="-90 0 0" radius="320"></a-circle>
 
 
 </a-scene>
