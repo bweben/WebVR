@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>playground scene</title>
     <meta name="description" content="playground scene">
     <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
+</head>
+<body>
+<a-scene>
+    <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-      </a-assets>
+        <img id="leaveTexture"
+             src="http://2.bp.blogspot.com/-7vesz6gcZZo/UmpVS4ujZ3I/AAAAAAAAE-4/TuG7pHNjt5g/s1600/Hedge+00+seamless.jpg">
+    </a-assets>
 
-      <!-- Primitives. -->
-      <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.35 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.85 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 .1 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    <a-entity camera="userHeight: 1" look-controls>
+        <a-animation attribute="position"
+                     dur="10000"
+                     direction="alternate"
+                     easing="ease"
+                     to="0 .8 -6"
+                     repeat="2"></a-animation>
+        <a-animation attribute="position"
+                     dur="10000"
+                     easing="ease"
+                     delay="20000"
+                     direction="alternate"
+                     repeat="2"
+                     to="0 .8 10"></a-animation>
+        <a-animation attribute="position"
+                     dur="10000"
+                     delay="40000"
+                     easing="ease"
+                     direction="alternate"
+                     repeat="2"
+                     to="0 3 10"></a-animation>
+    </a-entity>
+    <a-entity light="color: #fef7da; intensity: 2.5; angle: 90; type: ambient" position="1 1 0"></a-entity>
 
-      <!-- Background sky. -->
-      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
 
-      <!-- Ground. -->
-      <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
+    <!-- Primitives. -->
+    <a-torus-knot arc="180" p="2" q="7" radius="5" shader="flat" color="#7ea8d1" radius-tubular="0.1"
+                  src="#leaveTexture" repeat="150 1">
+        <a-link href="http://www.google.com"></a-link>
+    </a-torus-knot>
 
-      
-    </a-scene>
-  </body>
+    <!-- Background sky. -->
+    <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    <!-- Ground. -->
+    <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
+
+
+</a-scene>
+</body>
 </html>
